@@ -5,7 +5,7 @@ app=Flask(__name__)
 #connection parameters
 DB_NAME="newlearndb"
 DB_USER="vvs_root"
-DB_PASSWORD="Laxman14*"
+DB_PASSWORD="your-pass"
 DB_HOST="localhost"
 DB_PORT="5432"
 @app.route('/')
