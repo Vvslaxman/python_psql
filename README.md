@@ -1,5 +1,42 @@
 # python_psql
 
+
+```bash
+# Update the package list
+sudo apt update
+
+# Install PostgreSQL
+sudo apt install postgresql postgresql-contrib
+
+# Start PostgreSQL service
+sudo service postgresql start
+
+# Set up PostgreSQL user and database
+sudo -u postgres psql
+CREATE DATABASE newlearndb;
+CREATE USER vvs_root WITH PASSWORD 'Laxman14*';
+GRANT ALL PRIVILEGES ON DATABASE newlearndb TO vvs_root;
+\q
+
+# Install Python 3 and pip
+sudo apt install python3 python3-pip
+
+# Install psycopg2-binary
+pip3 install psycopg2-binary
+
+# Install Flask
+pip3 install flask
+
+# Verify installations
+psql --version
+python3 --version
+python3 -c "import psycopg2; print(psycopg2.__version__)"
+python3 -c "import flask; print(flask.__version__)"
+
+# Run Flask app
+python3 pdconn.py
+
+```
 ## Flask API with PostgreSQL Integration
 
 This repository provides a simple Flask application that interacts with a PostgreSQL database. The application supports basic CRUD operations on an `employees` table, including:
