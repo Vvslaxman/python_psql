@@ -14,7 +14,7 @@ sudo service postgresql start
 # Set up PostgreSQL user and database
 sudo -u postgres psql
 CREATE DATABASE newlearndb;
-CREATE USER vvs_root WITH PASSWORD 'Laxman14*';
+CREATE USER vvs_root WITH PASSWORD 'your-password';
 GRANT ALL PRIVILEGES ON DATABASE newlearndb TO vvs_root;
 \q
 
