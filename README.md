@@ -9,23 +9,35 @@ sudo apt update
 sudo apt install postgresql postgresql-contrib
 
 # Start PostgreSQL service
-sudo service postgresql start
+sudo systemctl start postgresql 
+sudo systemctl enable postgresql
 
 # Set up PostgreSQL user and database
-sudo -u postgres psql
-CREATE DATABASE newlearndb;
+sudo -i -u postgres
+
+ceateuser --interactive (name of role and super user or not)
+
+createdb newlearndb
+
+> psql
+ALTER DATABASE newlearndb OWNER to vvs_root;
+ALTER user vvs_root with PASSWORD 'your-passwd'
+
+\l
+\du (detail description)
 CREATE USER vvs_root WITH PASSWORD 'your-password';
 GRANT ALL PRIVILEGES ON DATABASE newlearndb TO vvs_root;
 \q
 
 # Install Python 3 and pip
+sudo apt install libpq-dev
 sudo apt install python3 python3-pip
 
 # Install psycopg2-binary
-pip3 install psycopg2-binary
+pip install psycopg2
 
 # Install Flask
-pip3 install flask
+pip install flask
 
 # Verify installations
 psql --version
